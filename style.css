@@ -1,0 +1,417 @@
+/* Reset and basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #ffffff;
+    background: linear-gradient(to bottom, #1f1c2c, #928dab);
+    overflow-x: hidden;
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    background: rgba(31, 28, 44, 0.9); /* Slightly darker background */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%; /* Full width for the navbar */
+    justify-content: space-around; /* Space out items evenly */
+    align-items: center; /* Center items vertically */
+}
+
+.navbar ul li {
+    flex-grow: 1; /* Items will evenly distribute across the width */
+    text-align: center; /* Center text inside items */
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+    display: block;
+    padding: 15px 0; /* Add vertical padding for better click area */
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.navbar ul li a:hover {
+    color: #ff6f61; /* Change color on hover */
+}
+
+.navbar ul li a::after {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 3px;
+    background: #ff6f61; /* Underline effect with a theme color */
+    margin: auto;
+    transition: width 0.3s ease;
+    position: absolute;
+    left: 0;
+    bottom: 0; /* Position underline just below the text */
+}
+
+.navbar ul li a:hover::after {
+    width: 100%; /* Expand underline on hover */
+}
+
+.navbar ul li a.active {
+    color: #ff6f61; /* Highlight the active section */
+}
+
+.navbar ul li a.active::after {
+    width: 100%; /* Active link always shows underline */
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to top right, #1f1c2c, #928dab);
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+}
+
+.hero-content h1 {
+    font-size: 64px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #ff6f61, #d4a5ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 24px;
+    color: #ffffffb3;
+}
+
+/* Section titles */
+.section-title {
+    padding: 50px;
+    font-size: 36px;
+    margin: 40px 0 20px;
+    text-align: center;
+    color: #ff6f61;
+}
+
+/* About Section */
+.about-content {
+    padding:50px;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    background: rgba(31, 28, 44, 0.6);
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.About_btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #fff;
+    background: linear-gradient(to right, #ff6f61, #d4a5ff);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.About_btn:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(to left, #ff6f61, #d4a5ff);
+}
+
+/* Skills Section */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.skill-category {
+    background: rgba(31, 28, 44, 0.6);
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.skill-bar {
+    margin: 10px 0;
+}
+
+.progress-bar {
+    background: #ffffff33;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 10px;
+    margin-top: 5px;
+}
+
+.progress {
+    height: 100%;
+    background: linear-gradient(to right, #ff6f61, #d4a5ff);
+    transition: width 0.5s ease;
+}
+
+/* Projects Section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Reduced min-width further to 220px */
+    gap: 15px; /* Keep the space between cards tight */
+    padding: 20px;
+}
+
+/* Card styling */
+.project-card {
+    background: rgba(31, 28, 44, 0.8);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Slightly reduced shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 10px; /* Reduce padding inside the card */
+}
+
+/* Card image styling */
+.project-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect for project card */
+.project-card:hover {
+    transform: scale(1.02); /* Further reduced scale on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Keep shadow soft */
+}
+
+/* Hover effect for the image inside the card */
+.project-card:hover img {
+    transform: scale(1.03); /* Slight image zoom effect */
+}
+
+/* Project info styling */
+.project-card .project-info {
+    padding: 10px;
+    text-align: center;
+}
+
+/* Project card heading */
+.project-card h3 {
+    font-size: 18px; /* Reduced font size for heading */
+    color: #ff6f61;
+}
+
+/* Project card description */
+.project-card p {
+    color: #ffffffb3;
+    padding-bottom: 8px; /* Slightly reduce padding */
+    font-size: 13px; /* Smaller font size for description */
+}
+
+/* Button styling */
+.Morebtn {
+    margin-top: 12px;
+    padding: 6px 16px; /* Reduced padding for the button */
+    font-size: 14px; /* Smaller font size for button */
+    color: #fff;
+    background: linear-gradient(to right, #ff6f61, #d4a5ff);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+/* Hover effect for the button */
+.Morebtn:hover {
+    transform: translateY(-2px); /* Slight button lift effect */
+    background: linear-gradient(to left, #ff6f61, #d4a5ff); /* Button background change */
+}
+
+
+  
+
+/* Contact Section */
+.contact-form {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background: rgba(31, 28, 44, 0.6);
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.contact-form .form-group {
+    margin-bottom: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background: linear-gradient(to right, #ff6f61, #d4a5ff);
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.contact-form button:hover {
+    transform: translateY(-3px);
+}
+
+
+.loader{
+    width: 100%;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    font-size: 10px;
+    text-align: center;
+    margin-top: 15px;
+    display: none;
+}
+
+.loader.show{
+    display: block;
+}
+
+.loader i{
+    color: #fff;
+    animation: rotateme 4s linear infinite;
+}
+
+@keyframes rotateme {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.form-messsage{
+    display: none;
+    width: 100%;
+    background-color: #1f1c2c;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.form-messsage.show{
+    display: block;
+    
+}
+/* Social Media Links Section */
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Space between icons */
+    margin-top: 20px;
+}
+/* Social Links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Add space between icons */
+    margin-top: 20px; /* Add space between social links and other content */
+}
+
+.social-links a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background: rgba(50, 18, 233, 0.714); /* Subtle background for icons */
+    border-radius: 50%; /* Circular icons */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    color: #ffffff;
+}
+
+/* Hover effect for social links */
+.social-links a:hover {
+    background: #ff6f61; /* Highlight background on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    color: #ffffff; /* Ensure icon color is visible */
+}
+
+/* SVG icon styling */
+.social-links a svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor; /* Use text color for SVG fill */
+    transition: fill 0.3s ease;
+}
+
+.social-links a:hover svg {
+    fill: #ffffff; /* Ensure SVG icon color remains visible */
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #1f1c2c;
+    color: #fff;
+    font-size: 14px;
+    margin-top: 40px; /* Add space above footer */
+    margin-bottom: 20px; /* Add space below footer */
+}
+
+/* Footer animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+footer {
+    animation: fadeIn 1s ease-out;
+}
+
