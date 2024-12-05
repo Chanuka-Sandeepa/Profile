@@ -91,6 +91,8 @@ body {
     background: linear-gradient(to top right, #1f1c2c, #928dab);
     text-align: center;
     animation: fadeIn 1s ease-out;
+    flex-direction: column; /* Stack content vertically */
+    padding: 20px; /* Add padding for smaller screens */
 }
 
 .hero-content h1 {
@@ -106,6 +108,49 @@ body {
     font-size: 24px;
     color: #ffffffb3;
 }
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .hero {
+        height: auto; /* Let the hero section adapt to content height */
+        padding: 40px 20px; /* Adjust padding */
+    }
+
+    .hero-content h1 {
+        font-size: 48px; /* Smaller heading */
+    }
+
+    .hero-content p {
+        font-size: 20px; /* Smaller text */
+    }
+
+    .hero-image {
+        max-width: 80%; /* Limit image width */
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 36px; /* Even smaller heading on very small screens */
+    }
+
+    .hero-content p {
+        font-size: 18px; /* Smaller text */
+    }
+
+    .hero-image {
+        max-width: 100%; /* Ensure image fits the screen */
+        margin-top: 20px;
+    }
+}
+
 
 /* Section titles */
 .section-title {
@@ -414,4 +459,5 @@ footer {
 footer {
     animation: fadeIn 1s ease-out;
 }
+
 
