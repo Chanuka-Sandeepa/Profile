@@ -226,11 +226,10 @@ body {
 /* Projects Section */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Reduced min-width further to 220px */
+    grid-template-columns: repeat(3, 1fr); /* Ensure 3 cards per row */
     gap: 15px; /* Keep the space between cards tight */
     padding: 20px;
 }
-
 /* Card styling */
 .project-card {
     background: rgba(31, 28, 44, 0.8);
